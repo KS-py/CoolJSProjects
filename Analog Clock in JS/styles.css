@@ -1,0 +1,186 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+
+/* main body style, added randomised bg change in JS file */
+body{
+    --hue: 200;
+    --hue2: 170;
+    background: linear-gradient(to right, hsl(var(--hue), 100%, 50%), hsl(var(--hue2), 100%, 50%));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* the clock face*/
+.clock{
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(to bottom, rgb(231, 180, 180), #ccc);
+    border-radius: 50%;
+    border: 2px solid black;
+    position: relative;
+}
+
+.clock-name{
+    position: absolute;
+    bottom: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* for the dot in the center */
+.clock::after{
+    content: '';
+    position: absolute;
+    background-color: black;
+    border-radius: 50%;
+    z-index: 11;
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* all numbers default style */
+.number{
+    --rotation: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotation));
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+/* individual number rotations */
+.number1{ --rotation: 30deg;}
+.number2{ --rotation: 60deg;}
+.number3{ --rotation: 90deg;}
+.number4{ --rotation: 120deg;}
+.number5{ --rotation: 150deg;}
+.number6{ --rotation: 180deg;}
+.number7{ --rotation: 210deg;}
+.number8{ --rotation: 240deg;}
+.number9{ --rotation: 270deg;}
+.number10{ --rotation: 300deg;}
+.number11{ --rotation: 330deg;}
+
+/* all hands default style */
+.hand{
+    --rotation: 0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%; 
+    background-color: black;
+    border: 1px solid white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transform-origin: bottom; /* set origin for transform */
+    z-index: 10; /* lift hand to be on numbers */
+    transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+
+/* the second hand's specifics */
+.second{
+    width: 3px;
+    height: 45%;
+    background-color: red;
+}
+
+/* the minute hand's specifics */
+.minute{
+    width: 7px;
+    height: 40%;
+    background-color: black;
+}
+
+/* the hour hand's specifics */
+.hour{
+    width: 10px;
+    height: 35%;
+    background-color: black;
+}
+
+/*Additional stuff to create the strokes :) */
+.stroke{
+    --rotation: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(calc(var(--rotation) * 1deg));
+    font-weight: 300;
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+/* all stroke rotations */
+.stroke1{--rotation: 6}
+.stroke2{--rotation: 12}
+.stroke3{--rotation: 18}
+.stroke4{--rotation: 24}
+
+.stroke6{--rotation: 36}
+.stroke7{--rotation: 42}
+.stroke8{--rotation: 48}
+.stroke9{--rotation: 54}
+
+.stroke11{--rotation: 66}
+.stroke12{--rotation: 72}
+.stroke13{--rotation: 78}
+.stroke14{--rotation: 84}
+
+.stroke16{--rotation: 96}
+.stroke17{--rotation: 102}
+.stroke18{--rotation: 108}
+.stroke19{--rotation: 114}
+
+.stroke21{--rotation: 126}
+.stroke22{--rotation: 132}
+.stroke23{--rotation: 138}
+.stroke24{--rotation: 144}
+
+.stroke26{--rotation: 156}
+.stroke27{--rotation: 162}
+.stroke28{--rotation: 168}
+.stroke29{--rotation: 174}
+
+.stroke31{--rotation: 186}
+.stroke32{--rotation: 192}
+.stroke33{--rotation: 198}
+.stroke34{--rotation: 204}
+
+.stroke36{--rotation: 216}
+.stroke37{--rotation: 222}
+.stroke38{--rotation: 228}
+.stroke39{--rotation: 234}
+
+.stroke41{--rotation: 246}
+.stroke42{--rotation: 252}
+.stroke43{--rotation: 258}
+.stroke44{--rotation: 264}
+
+.stroke46{--rotation: 276}
+.stroke47{--rotation: 282}
+.stroke48{--rotation: 288}
+.stroke49{--rotation: 294}
+
+.stroke51{--rotation: 306}
+.stroke52{--rotation: 312}
+.stroke53{--rotation: 318}
+.stroke54{--rotation: 324}
+
+.stroke56{--rotation: 336}
+.stroke57{--rotation: 342}
+.stroke58{--rotation: 348}
+.stroke59{--rotation: 354}
+
+
